@@ -1,0 +1,36 @@
+import com.jogamp.opengl.GL2;
+
+public class ButtenPanel {
+	
+	private float length = .33f;
+	private float x = 0;
+	private float y = 0;
+	
+	public static Butten[] b;// = new Butten(0,0,0,0);
+	public void draw(GL2 gl){
+		
+		gl.glBegin(GL2.GL_POLYGON);
+		gl.glColor3f(1f, .5f, .5f);
+		gl.glVertex2d(-1, .9);		
+		gl.glVertex2d(-1, 1);		
+		gl.glVertex2d(1,1);		
+		gl.glVertex2d(1, .9);
+		gl.glEnd();
+		
+		b= new Butten[6];
+		b[0] = new Butten(0,0,0,0);
+/*		x=+length;
+		b[1]= new Butten(x, y, 0 ,0);*/
+		for( int i = 1; i<6; ++i ){
+			x=+length;
+		 b[i]= new Butten(x, y, 0 ,0);
+		
+		}	
+		for (int h = 0; h<5; ++h){
+			b[h].draw(gl);
+		}
+		//b.draw(gl);
+		
+	}
+
+}

@@ -1,0 +1,19 @@
+import com.jogamp.opengl.GL2;
+
+public class ButtenPanel {
+	
+	public void draw(GL2 gl){
+		
+		gl.glBegin(GL2.GL_POLYGON);
+		gl.glColor3f(1, 1, 1);
+		gl.glVertex2d(-1, .9);
+		
+		gl.glVertex2d(-1, 1);
+		
+		gl.glVertex2d(1,1);
+		
+		gl.glVertex2d(1, .9);
+		gl.glEnd();
+	}
+
+}

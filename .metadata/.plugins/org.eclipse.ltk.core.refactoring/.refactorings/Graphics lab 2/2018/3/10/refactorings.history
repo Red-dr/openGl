@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;points&apos; to &apos;Points&apos;&#x0D;&#x0A;- Original project: &apos;Graphics lab 2&apos;&#x0D;&#x0A;- Original element: &apos;points&apos;&#x0D;&#x0A;- Renamed element: &apos;Points&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;points&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{points.java[points" matchStrategy="1" name="Points" qualified="false" references="true" similarDeclarations="false" stamp="1520204351055" textual="false" version="1.0"/>
+</session>

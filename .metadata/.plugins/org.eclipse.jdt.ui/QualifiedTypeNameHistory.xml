@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.awt.Frame"/>
+<fullyQualifiedTypeName name="com.jogamp.opengl.GLProfile"/>
+<fullyQualifiedTypeName name="com.jogamp.opengl.GLCapabilities"/>
+<fullyQualifiedTypeName name="com.jogamp.opengl.awt.GLCanvas"/>
+<fullyQualifiedTypeName name="com.jogamp.opengl.util.Animator"/>
+<fullyQualifiedTypeName name="com.jogamp.newt.event.WindowAdapter"/>
+<fullyQualifiedTypeName name="java.awt.event.WindowEvent"/>
+<fullyQualifiedTypeName name="java.awt.Color"/>
+<fullyQualifiedTypeName name="Lab_2"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="com.jogamp.opengl.GL"/>
+<fullyQualifiedTypeName name="utils.Positions"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="com.jogamp.opengl.util.gl2.GLUT"/>
+<fullyQualifiedTypeName name="scene.Submarine.Submarine"/>
+<fullyQualifiedTypeName name="com.jogamp.opengl.GL2"/>
+</qualifiedTypeNameHistroy>

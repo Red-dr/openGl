@@ -1,0 +1,34 @@
+import com.jogamp.opengl.GL2;
+
+public class Butten {
+	
+	private float x_pos;
+	private float y_pos;
+	private float hight;
+	private float length;
+	private String label;
+	
+	private Color c; 
+	
+	
+	public Butten(float x, float y,Color c, String label){
+		this.x_pos = x;
+		this.y_pos = y;
+		this.c = c;
+		this.label = label;
+		
+
+	}
+	
+	public void draw(GL2 gl){
+		
+		gl.glBegin(GL2.GL_POLYGON);
+		gl.glColor4f(c.getRed(), c.getGreen(), c.getBlue(), c.getAlpha());
+		gl.glVertex2f(-.98f+x_pos, .88f+y_pos);		
+		gl.glVertex2f(-.98f+x_pos, .97f+y_pos);		
+		gl.glVertex2f(-.67f+x_pos , .97f+y_pos );		
+		gl.glVertex2f(-.67f+x_pos , .88f+y_pos);
+		gl.glEnd();
+	}
+
+}

@@ -1,0 +1,15 @@
+
+public class Butten {
+	
+	private float x_pos;
+	private float y_pos; 
+	private Color c; 
+	
+	
+	public Butten(float x, float y, Color, c){
+		this.x_pos = x;
+		this.y_pos = y;
+		
+	}
+
+}

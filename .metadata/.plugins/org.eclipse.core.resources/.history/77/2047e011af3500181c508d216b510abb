@@ -1,0 +1,129 @@
+import java.awt.Frame;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+import com.jogamp.opengl.GL;
+import com.jogamp.opengl.GL2;
+import com.jogamp.opengl.GLAutoDrawable;
+import com.jogamp.opengl.GLCapabilities;
+import com.jogamp.opengl.GLEventListener;
+import com.jogamp.opengl.GLProfile;
+import com.jogamp.opengl.awt.GLCanvas;
+import com.jogamp.opengl.util.Animator;
+
+
+import java.util.Random;
+
+
+
+public class Lab_2 implements GLEventListener {
+
+	
+	static Random rand = new Random();
+	static Points[] star = new Points[50];
+	static Land[] l;
+	static Sky sky;
+	static Asteroid ast;
+	static PartacalSystem psystem;
+	static ButtenPanel bPan;
+	//public static Butten b = new Butten(0,0,0,0);
+	
+
+	@Override
+	public void display(GLAutoDrawable gld) {
+		// TODO Auto-generated method stub
+		GL2 gl = gld.getGL().getGL2();
+		gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
+		//gl.glEnable(GL2.GL_DEPTH_TEST);
+		gl.glEnable(GL2.GL_BLEND);
+		gl.glBlendFunc(GL.GL_SRC_ALPHA, GL2.GL_ONE_MINUS_CONSTANT_ALPHA);
+		
+		sky.draw(gl);
+		gl.glPointSize(4.0f);
+		gl.glBegin(GL2.GL_POINTS);
+		
+		for (Points p : star) {
+			p.think(gl);
+			gl.glColor4d(1, .8,.8, p.opacity);
+			gl.glVertex2f(p.x, p.y);
+		}
+		gl.glEnd();
+		gl.glDisable(GL2.GL_BLEND);
+		
+		//gl.glColor4d(1, 1, 1, 1d);
+		
+		psystem.draw(gl);
+		psystem.think();
+		l[0].draw(gl);
+		l[1].draw(gl);
+		l[2].draw(gl);	
+		bPan.draw(gl);
+		
+		gl.glFlush();
+		
+	}
+
+	@Override
+	public void dispose(GLAutoDrawable arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void init(GLAutoDrawable arg0) {
+		l = new Land[3];	
+		
+		l[0] = new Land(0f, -0.5f,new Color(249f/255f,66f/255f,.0f, 1f));
+		l[1] = new Land(-0.2f, -0.7f, new Color(1f, 128f /255f,.0f, 1f));
+		l[2] = new Land(-.8f, -0.9f, new Color(250f/255f, 201f/255f, 0f, 1f));
+		sky = new Sky();
+		
+		psystem = new PartacalSystem();
+		psystem.init();
+		bPan = new ButtenPanel();
+		
+		
+		
+	}
+
+	@Override
+	public void reshape(GLAutoDrawable arg0, int arg1, int arg2, int arg3, int arg4) {
+		// TODO Auto-generated method stub
+	}
+	public static void main(String[] args) {
+		
+		for ( int i = 0 ; i < 50; i++ ){
+			star[i] = new Points((rand.nextFloat()*2-1),(rand.nextFloat()*2-1));
+		}
+		// TODO Auto-generated method stub
+		Frame frame = new Frame( "simple JOGL Application");
+		GLProfile profile = GLProfile.get(GLProfile.GL2);
+		GLCapabilities capabilities = new GLCapabilities(profile);
+		GLCanvas canvas = new GLCanvas();
+		canvas.addGLEventListener(new Lab_2());
+		frame.add(canvas);
+		frame.setSize(1280, 920);
+		final Animator animator = new Animator(canvas);
+		  frame.addWindowListener(new WindowAdapter() {
+	        	public void windowClosing(WindowEvent e) {
+	                // Run this on another thread than the AWT event queue to
+	                // make sure the call to Animator.stop() completes before
+	                // exiting
+	                new Thread(new Runnable() {
+
+	                    public void run() {
+	                        animator.stop();
+	                        System.exit(0);
+	                    }
+	                }).start();
+	            }
+	        });
+		
+		frame.setLocationRelativeTo(null);
+		frame.setVisible(true);
+		animator.start();
+		
+
+	}
+
+}

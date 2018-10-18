@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;TrackingCamera.java&apos; to &apos;assingment3.8/src/scene.Submarine&apos;&#x0D;&#x0A;- Original project: &apos;assingment3.8&apos;&#x0D;&#x0A;- Destination element: &apos;assingment3.8/src/scene.Submarine&apos;&#x0D;&#x0A;- Original element: &apos;scene.TrackingCamera.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;scene.Submarine" element1="/src&lt;scene{TrackingCamera.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1534304547163" units="1" version="1.0"/>
+</session>
